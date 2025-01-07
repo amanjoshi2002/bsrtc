@@ -1,0 +1,46 @@
+* {
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+@media(max-width:760px){
+  .routes{
+    margin-top: 490px;
+  }
+}
+@media(min-width:759px)and (max-width:768px){
+    .routes{
+        margin-top: 440px;
+    }
+}
+@media(min-width:768px)and (max-width:820px){
+    .routes{
+        margin-top: 340px;
+    }
+}
+.view:hover{
+    color: white;
+    background-color: #552e9a;
+  }
+
+  @media(min-width:1000px){
+    .routes{
+        margin-top: 220px;
+    }
+  }
+  @media(max-width:1024px){
+   .grids{
+    flex-direction: column;
+    .grid-child{
+        width: 100%;
+    }
+   } 
+
+  }
+
+  @media(max-width:540px){
+    .popFLex{
+        flex-direction: column;
+    }
+  }
+/* Style for black side arrows */
+

@@ -1,0 +1,368 @@
+/* Active item styles */
+.office-nav ul li.active {
+  background-color: transparent !important;
+  color: #fff !important; /* White text for other active items */
+}
+
+/* General hover state */
+.office-nav ul li:hover {
+  background-color: #3f2060 !important; /* Darker purple hover effect */
+}
+
+/* Base navigation styles */
+.office-nav ul {
+  list-style-type: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: flex !important;
+  background-color: #5a2d82 !important; /* Purple background for the nav */
+  border-radius: 8px !important;
+  align-items: center;
+  overflow-x: auto; /* Enable horizontal scrolling */
+}
+
+.office-nav ul li {
+  flex: 1 !important;
+  text-align: center !important;
+  padding: 10px 15px !important;
+  color: white !important;
+  font-weight: bold !important;
+  cursor: pointer !important;
+  font-size: 13px;
+  background-color: #5a2d82; /* Purple background for inactive tabs */
+  color: white; /* White text for inactive tabs */
+}
+
+/* Ensure no border-radius for other items */
+.office-nav ul li:not(.head-office) {
+  border-radius: 0 !important;
+}
+
+/* Styling the yellow division */
+.yellow {
+  background-color: #ffd700;
+  padding: 6px;
+  color: #3f2060;
+  border-radius: 16px;
+}
+
+/* Active state for non-head-office tabs */
+.office-nav ul li.active:not(.head-office) {
+  background-color: #5a2d82; /* Keep purple background for active non-head-office tabs */
+}
+
+.office-nav ul li.active:not(.head-office) .yellow {
+  background-color: #ffd700; /* Yellow background for active division */
+  color: #3f2060; /* Purple text for active division */
+  padding: 6px;
+  border-radius: 16px;
+}
+
+/* Ensure the head office tab doesn't change on active state */
+.office-nav ul li.head-office.active {
+  background-color: #ffd700 !important;
+  color: #5a2d82 !important;
+}
+
+/* Responsive design */
+@media (max-width: 770px) {
+  .office-nav ul {
+    flex-direction: row;
+  }
+
+  .office-nav ul li {
+    padding-left: 20px !important;
+  }
+
+  /* Mobile view adjustment */
+  .office-nav ul li.head-office {
+    text-align: center !important;
+    margin-bottom: 10px !important;
+    font-size: 12px !important; /* Further reduced font size for mobile */
+  }
+
+
+
+  .division div {
+    font-size: 0.63rem;
+  }
+}
+
+/* Base styling for office-nav */
+.office-nav {
+  position: relative;
+  overflow: hidden; /* Hide overflowing items */
+}
+
+.office-nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex; /* Flexbox layout for horizontal scrolling */
+  overflow-x: auto; /* Enable horizontal scrolling */
+  scroll-snap-type: x mandatory; /* Snap to items for better sliding experience */
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling for mobile */
+}
+
+.office-nav ul li {
+  min-width: 150px; /* Set a minimum width to control the size of the list items */
+  flex-shrink: 0; /* Prevent shrinking */
+  scroll-snap-align: start; /* Ensure the items snap when scrolling */
+  margin-right: 10px; /* Space between items */
+}
+
+/* On small screens */
+@media (max-width: 600px) {
+  .office-nav ul {
+    width: 100%;
+    max-width: 100%; /* Allow full width for scrolling */
+    overflow-x: scroll; /* Enable horizontal scrolling */
+    white-space: nowrap; /* Prevent items from wrapping */
+  }
+
+  .office-nav ul::-webkit-scrollbar {
+    display: none; /* Hide the scrollbar for a cleaner look */
+  }
+
+  .office-nav ul li {
+    display: inline-block;
+    margin-right: 10px; /* Space between the items */
+    max-width: 50%; /* Show only two items at a time */
+  }
+}
+@media(max-width:750px){
+  .table-responsive{
+    font-size: 0.6rem;
+  }
+}
+@media(max-width:552px){
+  .table-responsive{
+    font-size: 0.3rem;
+  }
+}
+
+.table-responsive {
+  overflow-x: auto; /* Enable horizontal scrolling */
+  font-size: 1rem; /* Default font size */
+}
+
+@media (max-width: 750px) {
+  .table-responsive {
+    font-size: 0.9rem; /* Increase font size for smaller screens */
+  }
+}
+
+@media (max-width: 552px) {
+  .table-responsive {
+    font-size: 0.8rem; /* Further increase font size for very small screens */
+  }
+}
+
+.custom-table th, .custom-table td {
+  padding: 10px; /* Add padding for better spacing */
+  text-align: center; /* Center align text */
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+@media (max-width: 600px) {
+  .custom-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .custom-table thead {
+    display: none;
+  }
+
+  .custom-table tr {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #fff;
+  }
+
+  .custom-table td {
+    flex: 1 1 50%;
+    text-align: left;
+    padding: 10px;
+    box-sizing: border-box;
+    position: relative;
+  }
+
+  .custom-table td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    display: inline-block;
+    width: 120px; /* Increase width for labels */
+    margin-right: 10px; /* Add space between label and data */
+    white-space: nowrap; /* Prevent label from wrapping */
+  }
+}
+
+/* Head office styles */
+.head-office {
+  background-color: #ffd700;
+  color: #5a2d82;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Current division styles */
+.yellow-division {
+  background-color: #ffd700;
+  color: #5a2d82;
+  padding: 8px 16px;
+  border-radius: 20px;
+  display: inline-block;
+}
+
+.office-nav ul {
+  list-style-type: none;
+  padding: 15px !important;
+  margin: 0;
+  display: flex;
+  background-color: #5a2d82;
+  align-items: center;
+  gap: 20px;
+  overflow-x: auto;
+}
+
+.office-nav ul li {
+  white-space: nowrap;
+  cursor: pointer;
+  padding: 0 !important;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Remove background color change on hover for better UX */
+.office-nav ul li:hover {
+  background-color: transparent !important;
+}
+
+@media (max-width: 768px) {
+  .head-office {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+
+  .yellow-division {
+    font-size: 13px;
+    padding: 6px 12px;
+  }
+
+  .office-nav ul {
+    padding: 12px !important;
+    gap: 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  .head-office {
+    font-size: 13px;
+    padding: 5px 10px;
+  }
+
+  .yellow-division {
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+
+  .office-nav ul {
+    padding: 10px !important;
+    gap: 10px;
+  }
+}
+
+/* Table container styles */
+.table-responsive {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  margin-top: 20px;
+  width: 100%;
+  max-width: 1400px; /* Increased max-width for desktop */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Table styles */
+.custom-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+/* Header styles */
+.custom-table th {
+  color: #666666;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 20px 25px;
+  background-color: #F8F9FA;
+  border-bottom: 1px solid #eee;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+/* Body styles */
+.custom-table td {
+  padding: 20px 25px;
+  border-bottom: 1px solid #eee;
+  color: #333;
+  background-color: white;
+  font-size: 15px;
+  text-align: left;
+}
+
+/* Override any center alignment from other rules */
+.custom-table th, .custom-table td {
+  text-align: left !important;
+  white-space: nowrap;
+}
+
+/* Remove border from last row */
+.custom-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Hover effect on rows */
+.custom-table tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+/* Container padding */
+.office-details-container {
+  padding: 30px; /* Increased padding */
+  max-width: 1400px; /* Match table max-width */
+  margin: 0 auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .custom-table th,
+  .custom-table td {
+    padding: 12px 15px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 576px) {
+  .custom-table th,
+  .custom-table td {
+    padding: 10px;
+    font-size: 13px;
+  }
+  
+  .office-details-container {
+    padding: 10px;
+  }
+}
